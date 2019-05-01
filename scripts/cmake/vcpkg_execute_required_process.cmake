@@ -32,6 +32,8 @@ function(vcpkg_execute_required_process)
     cmake_parse_arguments(vcpkg_execute_required_process "" "WORKING_DIRECTORY;LOGNAME" "COMMAND" ${ARGN})
     set(LOG_OUT "${CURRENT_BUILDTREES_DIR}/${vcpkg_execute_required_process_LOGNAME}-out.log")
     set(LOG_ERR "${CURRENT_BUILDTREES_DIR}/${vcpkg_execute_required_process_LOGNAME}-err.log")
+    string(REPLACE ";" " " mymsg "${vcpkg_execute_required_process_COMMAND}")
+    message(">>> Executing command ${mymsg}")
     execute_process(
         COMMAND ${vcpkg_execute_required_process_COMMAND}
         OUTPUT_FILE ${LOG_OUT}
