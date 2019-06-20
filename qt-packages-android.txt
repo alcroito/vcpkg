@@ -1,0 +1,7 @@
+zlib
+pcre2
+harfbuzz
+freetype
+openssl
+zstd
+sqlite3
