@@ -37,6 +37,7 @@ vcpkg_from_github(
         use_abort.patch
         cmake.patch
         ${APNG_EXTRA_PATCH}
+        fix-fat-ios-build.patch
 )
 
 if(VCPKG_LIBRARY_LINKAGE STREQUAL dynamic)

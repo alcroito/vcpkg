@@ -1,0 +1,17 @@
+diff --git a/scripts/genout.cmake.in b/scripts/genout.cmake.in
+index 01f12de..e3ea378 100644
+--- a/scripts/genout.cmake.in
++++ b/scripts/genout.cmake.in
+@@ -25,9 +25,10 @@ set(ZLIBINCDIR "@ZLIB_INCLUDE_DIR@")
+ set(PLATFORM_C_FLAGS)
+ if(APPLE)
+   set(CMAKE_OSX_ARCHITECTURES "@CMAKE_OSX_ARCHITECTURES@")
++  list(GET CMAKE_OSX_ARCHITECTURES 0 OSX_FIRST_ARCH)
+   set(CMAKE_OSX_SYSROOT "@CMAKE_OSX_SYSROOT@")
+-  if(CMAKE_OSX_ARCHITECTURES)
+-    set(PLATFORM_C_FLAGS ${PLATFORM_C_FLAGS} -arch ${CMAKE_OSX_ARCHITECTURES})
++  if(OSX_FIRST_ARCH)
++    set(PLATFORM_C_FLAGS ${PLATFORM_C_FLAGS} -arch ${OSX_FIRST_ARCH})
+   endif()
+   if(CMAKE_OSX_SYSROOT)
+     set(PLATFORM_C_FLAGS ${PLATFORM_C_FLAGS} -isysroot ${CMAKE_OSX_SYSROOT})
