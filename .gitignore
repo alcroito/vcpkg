@@ -310,6 +310,7 @@ __pycache__/
 !triplets/arm-ios.cmake
 !triplets/x64-ios.cmake
 !triplets/x86-ios.cmake
+!triplets/fat-ios.cmake
 *.exe
 *.zip
 
