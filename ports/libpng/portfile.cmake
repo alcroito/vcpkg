@@ -37,6 +37,7 @@ vcpkg_from_github(
         use-abort-on-all-platforms.patch
         fix-libm-unix.patch
         ${APNG_EXTRA_PATCH}
+        fix-fat-ios-build.patch
 )
 
 if(VCPKG_LIBRARY_LINKAGE STREQUAL dynamic)
