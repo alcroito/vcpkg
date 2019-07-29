@@ -13,6 +13,12 @@ if(NOT _VCPKG_IOS_TOOLCHAIN)
     elseif(VCPKG_TARGET_TRIPLET STREQUAL "x86-ios")
         set(CMAKE_OSX_ARCHITECTURES i386 CACHE STRING "")
         set(CMAKE_OSX_SYSROOT "iphonesimulator")
+    elseif(VCPKG_TARGET_TRIPLET STREQUAL "fat-ios")
+        set(CMAKE_OSX_ARCHITECTURES "arm64;x86_64" CACHE STRING "")
+        # FIXME Hack to build libpng without patching it.
+        # The project file checks for the variable to decide
+        # whether to add -DPNG_ARM_NEON_OPT=0.
+        set(CMAKE_SYSTEM_PROCESSOR aarch64)
     else()
         message(FATAL_ERROR "Unknown ABI for target triplet ${VCPKG_TARGET_TRIPLET}")
     endif()
