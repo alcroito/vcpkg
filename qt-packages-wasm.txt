@@ -1,0 +1,4 @@
+zlib
+pcre2
+zstd
+sqlite3
