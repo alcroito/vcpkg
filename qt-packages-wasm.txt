@@ -4,3 +4,4 @@ zstd
 sqlite3
 libpng
 freetype
+harfbuzz
