@@ -2,3 +2,5 @@ zlib
 pcre2
 zstd
 sqlite3
+libpng
+freetype
