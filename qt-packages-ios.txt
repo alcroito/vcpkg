@@ -1,0 +1,8 @@
+zlib
+pcre2
+harfbuzz
+freetype
+zstd
+sqlite3
+libpng
+double-conversion
